@@ -28,6 +28,10 @@ body {
     color: var(--cor-04);
 }
 
+main {
+    margin: 5rem auto;
+}
+
 nav {
     position: fixed;
     z-index: 100;
@@ -35,7 +39,7 @@ nav {
     width: 100%;
     background-color: var(--cor-04);
     color: var(--cor-01);
-    padding: 1.2rem 5rem;
+    /* padding: 1.2rem 5rem; */
 
     display: flex;
     flex-direction: row;
@@ -68,8 +72,9 @@ nav ul {
     color: var(--cor-destaque);
 }
 
-main {
-    margin: 5rem auto;
+.menu-responsivo {
+    font-size: 3rem;
+    display: none;
 }
 
 article {
@@ -119,8 +124,6 @@ article:hover {
     justify-content: space-between;
 }
 
-
-
 footer {
     background-color: var(--cor-04);
     opacity: 0.6;
@@ -130,4 +133,144 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+}
+
+/* ===== Media Queries ===== */
+
+/* XS Extra Small - smartphone portrait (retrato) */
+@media (max-width: 25rem) { /* 0 até 400px */
+    nav {
+        padding: 0.5rem 1rem;
+    }
+    
+    .menu {
+        display: none;
+    }
+
+    .menu-responsivo {
+        display: block;
+    }
+
+    article {
+        margin: 0 0.5rem 1rem;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .foto {
+        overflow: visible;
+        margin-right: 0;
+    }
+    
+    .foto img {
+        width: 100%;
+    }
+
+
+    /* TESTE */
+    /* nav {
+        background-color: crimson;
+    } */
+}
+
+/* SM Small - smartphone landscape (paisagem) */
+@media (min-width: 25rem) { /* a partir de 400px */
+    nav {
+        padding: 0.5rem 1rem;
+    }
+    
+    .menu {
+        display: none;
+    }
+
+    .menu-responsivo {
+        display: block;
+    }
+
+    article {
+        margin: 0 0.5rem 1rem;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .foto {
+        overflow: visible;
+        margin-right: 0;
+    }
+    
+    .foto img {
+        width: 100%;
+    }
+
+
+    /* TESTE */
+    /* nav {
+        background-color: #149ddc;
+    } */
+}
+
+/* Tablet */
+@media (min-width: 36rem) { /* a partir 576px */
+    nav {
+        padding: 0.5rem 2rem;
+    }
+
+    article {
+        margin: 0 2rem 1rem;
+    }
+
+    /* TESTE */
+    /* nav {
+        background-color: #fbb40e;
+    } */
+}
+
+/* Notebook */
+@media (min-width: 48rem) /*and (max-width: 62rem)*/ { /* a partir 768px */
+    .menu {
+        display: block;
+    }
+
+    .menu-responsivo {
+        display: none;
+    }
+    
+    nav {
+        padding: 1.2rem 5rem;
+    }
+
+    article {
+        margin: 0 5rem 1rem;
+        height: 16rem;
+        display: grid;
+        grid-template-columns: 16rem auto;
+    }
+
+    .foto {
+        overflow: hidden;
+        margin-right: 1rem;
+    }
+    
+    .foto img {
+        height: 100%;
+    }
+
+    /* TESTE */
+    /* nav {
+        background-color: #00a51e;
+    } */
+}
+
+/* Desktop */
+@media (min-width: 62rem) { /* a partir 992px */
+    article {
+        max-width: 75rem; /* 1200px */
+    }
+
+    /* TESTE */
+    /* nav {
+        background-color: #38493b;
+    } */
 }
