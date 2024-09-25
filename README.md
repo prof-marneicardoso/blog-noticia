@@ -3,4 +3,4 @@
 ### Blog de Notícias utilizando as Tags Semânticas do HTML
 
 ---
-Update: Adicionado Media Queries (Responsidade)
+Update: Adicionado Menu Hamburguer
