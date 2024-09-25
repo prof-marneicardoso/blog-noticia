@@ -2,6 +2,9 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta name="author" content="prof. Marnei Cardoso">
+    <meta name="keywords" content="blog, news, noticias, esporte, filmes, politica">
+    <meta name="description" content="Blog de notícias sobre esporte, filmes, política e muito mais.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buenas News</title>
     <!-- CSS Externo -->
@@ -33,9 +36,22 @@
             </ul>
         </div>
 
-        <!-- Menu Responsivo -->
+        <!-- Menu Responsivo (dropdown com checkbox) -->
         <div class="menu-responsivo">
-            <i class='bx bx-menu'></i>
+            <input type="checkbox" id="menu-toggle">
+
+            <label for="menu-toggle" class="menu-button">
+                <i class="bx bx-menu"></i>
+            </label>
+
+            <div class="menu-content">
+                <ul>
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">ESPORTE</a></li>
+                    <li><a href="#">FILMES</a></li>
+                    <li><a href="#">POLITICA</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
 

@@ -2,13 +2,17 @@
 /* Fonte */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+/* Variáveis */
 :root {
-    --cor-principal: #5900ff;
-    --cor-destaque: #7e39ff;
+    /* Paleta de cores */
+    --cor-principal: #6464ff;
     --cor-01: #f9f9f9;
     --cor-02: #eaeaea;
-    --cor-03: #b3b3b3;
-    --cor-04: #232323;
+    --cor-03: #232323;
+    --cor-04: #23232350;
+
+    /*        X Y   desfoque    espessura   cor */
+    --sombra: 0 0   0.5rem      0.1rem      var(--cor-04);
 }
 
 /* Reset */
@@ -25,21 +29,21 @@ html {
 
 body {
     background-color: var(--cor-02);
-    color: var(--cor-04);
+    color: var(--cor-03);
 }
 
 main {
     margin: 5rem auto;
 }
 
+/* ===== Header ===== */
 nav {
     position: fixed;
     z-index: 100;
     top: 0;
     width: 100%;
-    background-color: var(--cor-04);
+    background-color: var(--cor-03);
     color: var(--cor-01);
-    /* padding: 1.2rem 5rem; */
 
     display: flex;
     flex-direction: row;
@@ -48,7 +52,7 @@ nav {
 }
 
 nav span {
-    color: var(--cor-destaque);
+    color: var(--cor-principal);
 }
 
 nav a {
@@ -61,6 +65,10 @@ nav ul {
     display: flex;
 }
 
+nav i {
+    font-size: 3rem;
+}
+
 .menu a {
     font-weight: 700;
     letter-spacing: 0.1rem;
@@ -69,14 +77,16 @@ nav ul {
 }
 
 .menu a:hover {
-    color: var(--cor-destaque);
+    color: var(--cor-principal);
 }
 
 .menu-responsivo {
     font-size: 3rem;
     display: none;
+    position: relative;
 }
 
+/* ===== Bloco da Notícia ===== */
 article {
     background-color: var(--cor-01);
     height: 16rem;
@@ -99,7 +109,7 @@ article:hover {
     cursor: pointer;
     transform: scale(1.01);
     /*          X   Y   desfoque    espessura   cor */
-    box-shadow: 0   0   0.5rem      0.1rem      var(--cor-03);
+    box-shadow: var(--sombra);
 }
 
 .foto {
@@ -113,7 +123,7 @@ article:hover {
 
 .leia-mais {
     font-weight: 700;
-    color: var(--cor-destaque);
+    color: var(--cor-principal);
     text-align: right;
     padding: 1rem;
 }
@@ -124,9 +134,9 @@ article:hover {
     justify-content: space-between;
 }
 
+/* ===== Footer ===== */
 footer {
     background-color: var(--cor-04);
-    opacity: 0.6;
     color: var(--cor-01);
     padding: 1rem 5rem;
     text-align: center;
@@ -134,6 +144,53 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+/* ===== Menu Responsivo (Dropdown) ===== */
+/* .menu-responsivo input { */
+.menu-responsivo input[type="checkbox"] {
+    display: none;
+}
+
+.menu-button {
+    cursor: pointer;
+}
+
+.menu-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--cor-01);
+    min-width: 10rem;
+    box-shadow: var(--sombra);
+    z-index: 10;
+    text-align: right;
+}
+
+.menu-content ul {
+    /* display: block; */
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-content a {
+    color: var(--cor-03);
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 1rem;
+    display: block;
+}
+
+.menu-content a:hover {
+    background-color: var(--cor-principal);
+    color: var(--cor-01);
+}
+
+/* Checkbox ativando dropdown */
+#menu-toggle:checked + .menu-button + .menu-content {
+    display: block;
+}
+
 
 /* ===== Media Queries ===== */
 
